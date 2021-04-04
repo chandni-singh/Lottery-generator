@@ -1,0 +1,17 @@
+.Lottery-container {
+    text-align: center;
+}
+
+.Lottery {
+    display : flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+button {
+    background-color: black;
+    color: orange;
+    padding: 1rem;
+    width: 8rem;
+}

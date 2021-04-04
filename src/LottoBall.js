@@ -4,7 +4,7 @@ import './LottoBall.css'
 class LottoBall extends Component {
     render() {
         return (
-            <h1 className = "LottoBall">1</h1>
+            <h1 className = "LottoBall">{this.props.display}</h1>
         )
     }
 }
