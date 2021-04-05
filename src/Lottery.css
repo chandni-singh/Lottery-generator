@@ -1,12 +1,22 @@
 .Lottery-container {
+    border : 2px solid gray;
     text-align: center;
+    margin-bottom: 4rem;
+    padding: 1.5rem;
+    border-radius: 10px;
 }
 
 .Lottery {
     display : flex;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 2rem;
+}
 
+h1 {
+    color: black;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 button {

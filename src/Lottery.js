@@ -5,7 +5,7 @@ import './Lottery.css';
 
 class Lottery extends Component {
     static defaultProps = {
-        title : 'Lottery',
+        title : 'Lotto',
         numBalls : 6,
         maxNum : 40
     }
@@ -13,32 +13,30 @@ class Lottery extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            nums : [1,2,3,4,5,6]
+            nums : Array.from({length : this.props.numBalls})
         }
 
         this.genLottery = this.genLottery.bind(this);
     }
 
     genLottery() {
+        // generating array of random numbers and updating state with this new copy of array
         let numArr = [];
         for(let i= 0; i<this.props.numBalls; i++) {
             numArr.push(Math.floor(Math.random()*this.props.maxNum) + 1);
         }
 
         this.setState({nums : numArr});
-        console.log(this.state);
     }
 
     render() {
         return(
             <div className= "Lottery-container">
+                <h1>{this.props.title}</h1>
                 <div className = "Lottery">
-                    <LottoBall display = {this.state.nums[0]} />
-                    <LottoBall display = {this.state.nums[1]} />
-                    <LottoBall display = {this.state.nums[2]} />
-                    <LottoBall display = {this.state.nums[3]} />
-                    <LottoBall display = {this.state.nums[4]} />
-                    <LottoBall display = {this.state.nums[5]} />
+                    {this.state.nums.map( n => 
+                        <LottoBall display = {n} />
+                    )}
                 </div>
                 <button onClick = {this.genLottery}>Generate!</button>
             </div>

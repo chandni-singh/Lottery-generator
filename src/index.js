@@ -7,7 +7,10 @@ import Lottery from './Lottery';
 class App extends Component {
   render() {
     return (
-      <Lottery />
+      <div>
+        <Lottery />
+        <Lottery title = "Mini Daily" maxNum = {10} numBalls = {4} />
+      </div>
     )
   }
 }
